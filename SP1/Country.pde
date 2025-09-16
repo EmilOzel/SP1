@@ -21,7 +21,7 @@ void drawGroup(PImage flag, String name, int rx, int ry, String colour) {
   // White rectangle
   myRect(rx, ry, rectWidth, rectHeight);
 
-  // Flag
+  // Flag image adding
   image(flag, rx, ry, flagSize, flagSize);
 
   // Country name
