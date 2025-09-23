@@ -3,12 +3,13 @@ PImage portugal, spain, morocco, iran;
 PImage france, australia, peru, denmark;
 PImage argentina, iceland, croatia, nigeria;
 
+Group groupA, groupB, groupC, groupD;
+
 void setup() {
   size(600, 600);
   background(25, 63, 209);
   textSize(20);
 
-  // Load images
   russia = loadImage("/Users/emilozel/Downloads/Russia.png");
   saudi = loadImage("/Users/emilozel/Downloads/Saudi.png");
   egypt = loadImage("/Users/emilozel/Downloads/Egypt.png");
@@ -28,43 +29,42 @@ void setup() {
   iceland = loadImage("/Users/emilozel/Downloads/Iceland.png");
   croatia = loadImage("/Users/emilozel/Downloads/Croatia.png");
   nigeria = loadImage("/Users/emilozel/Downloads/Nigeria.png");
+
+  groupA = new Group("GROUP A", "blue", width*0.17, 45);
+  groupA.addCountry(new Country("Russia", russia, "blue", 30, 50));
+  groupA.addCountry(new Country("Saudi Arabia", saudi, "blue", 30, 100));
+  groupA.addCountry(new Country("Egypt", egypt, "blue", 30, 150));
+  groupA.addCountry(new Country("Uruguay", uruguay, "blue", 30, 200));
+
+  groupB = new Group("GROUP B", "yellow", width*0.17, height*0.58);
+  groupB.addCountry(new Country("Portugal", portugal, "yellow", 310, 50));
+  groupB.addCountry(new Country("Spain", spain, "yellow", 310, 100));
+  groupB.addCountry(new Country("Morocco", morocco, "yellow", 310, 150));
+  groupB.addCountry(new Country("Iran", iran, "yellow", 310, 200));
+
+  groupC = new Group("GROUP C", "blue", width*0.65, 45);
+  groupC.addCountry(new Country("France", france, "blue", 30, 350));
+  groupC.addCountry(new Country("Australia", australia, "blue", 30, 400));
+  groupC.addCountry(new Country("Peru", peru, "blue", 30, 450));
+  groupC.addCountry(new Country("Denmark", denmark, "blue", 30, 500));
+
+  groupD = new Group("GROUP D", "yellow", width*0.65, height*0.58);
+  groupD.addCountry(new Country("Argentina", argentina, "yellow", 310, 350));
+  groupD.addCountry(new Country("Iceland", iceland, "yellow", 310, 400));
+  groupD.addCountry(new Country("Croatia", croatia, "yellow", 310, 450));
+  groupD.addCountry(new Country("Nigeria", nigeria, "yellow", 310, 500));
 }
 
 void draw() {
   background(25, 63, 209);
 
-  // GROUP A
-  fill(27, 247, 237);
-  text("GROUP A", width*0.17, 45);
-  drawGroup(russia, "Russia", 30, 50, "blue");
-  drawGroup(saudi, "Saudi Arabia", 30, 100, "blue");
-  drawGroup(egypt, "Egypt", 30, 150, "blue");
-  drawGroup(uruguay, "Uruguay", 30, 200, "blue");
-
-  // GROUP B
-  fill(247, 237, 27);
-  text("GROUP B", width*0.17, height*0.58);
-  drawGroup(portugal, "Portugal", 310, 50, "yellow");
-  drawGroup(spain, "Spain", 310, 100, "yellow");
-  drawGroup(morocco, "Morocco", 310, 150, "yellow");
-  drawGroup(iran, "Iran", 310, 200, "yellow");
-
-  // GROUP C
-  fill(27, 247, 237);
-  text("GROUP C", width*0.65, 45);
-  drawGroup(france, "France", 30, 350, "blue");
-  drawGroup(australia, "Australia", 30, 400, "blue");
-  drawGroup(peru, "Peru", 30, 450, "blue");
-  drawGroup(denmark, "Denmark", 30, 500, "blue");
-
-  // GROUP D
-  fill(247, 237, 27);
-  text("GROUP D", width*0.65, height*0.58);
-  drawGroup(argentina, "Argentina", 310, 350, "yellow");
-  drawGroup(iceland, "Iceland", 310, 400, "yellow");
-  drawGroup(croatia, "Croatia", 310, 450, "yellow");
-  drawGroup(nigeria, "Nigeria", 310, 500, "yellow");
+  // Draw all groups
+  groupA.display();
+  groupB.display();
+  groupC.display();
+  groupD.display();
 }
+
 
 void myRect(int rx, int ry, int rw, int rh) {
   fill(255);
