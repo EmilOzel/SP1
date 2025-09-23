@@ -3,6 +3,7 @@ PImage portugal, spain, morocco, iran;
 PImage france, australia, peru, denmark;
 PImage argentina, iceland, croatia, nigeria;
 
+// Run all groups images and placements
 Group groupA, groupB, groupC, groupD;
 
 void setup() {
@@ -56,7 +57,12 @@ void setup() {
 }
 
 void draw() {
-  background(25, 63, 209);
+  background(20, 5, 160);
+  
+  stroke(255);
+  strokeWeight(2);
+  line(305, 0, 305, 600);
+
 
   // Draw all groups
   groupA.display();
